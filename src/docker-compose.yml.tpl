@@ -12,11 +12,11 @@ services:
       - 80
     environment:
       WEBROOT: /var/www/html/public/
-      VIRTUAL_HOST: ${PROJECT_NAME}.test, ${PROJECT_NAME}.localhost, ${PROJECT_NAME}.dev.link-value.net
+      VIRTUAL_HOST: ${PROJECT_NAME}.test, ${PROJECT_NAME}.localhost
       PPL_OPEN: http://${PROJECT_NAME}.localhost/
       ENABLE_XDEBUG: 1
       PHP_IDE_CONFIG: serverName=${PROJECT_NAME}
-      XDEBUG_CONFIG: remote_host=docker.for.mac.localhost
+      XDEBUG_CONFIG: remote_host=host.docker.internal
       SKIP_COMPOSER: 1
     depends_on:
       - db
